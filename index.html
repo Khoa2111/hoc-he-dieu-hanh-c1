@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>OS C1 · Học hiểu để nhớ lâu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Về trang tổng quan">
+        <span class="brand-mark">OS</span>
+        <span><strong>Học HĐH</strong><small>Chương 1 · C1</small></span>
+      </a>
+      <nav class="nav" aria-label="Điều hướng chính">
+        <a class="nav-link active" href="#overview"><span>⌂</span>Tổng quan</a>
+        <a class="nav-link" href="#map"><span>⌘</span>Bản đồ kiến thức</a>
+        <a class="nav-link" href="#learn"><span>◈</span>Học theo cụm</a>
+        <a class="nav-link" href="#cards"><span>◇</span>Thẻ nhớ</a>
+        <a class="nav-link" href="#quiz"><span>✓</span>Kiểm tra nhanh</a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="spark">✦</span>
+        <strong>Học chủ động</strong>
+        <p>Đừng chỉ đọc slide. Hãy tự nhớ lại, liên kết và giải thích bằng lời của bạn.</p>
+      </div>
+      <a class="source-link" href="Hệ Điều Hành-C1.pdf" target="_blank" rel="noreferrer">↗ Mở file C1 gốc</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb">HỆ ĐIỀU HÀNH <span>/</span> CHƯƠNG 1</div>
+        <button class="icon-button" id="themeToggle" title="Đổi giao diện" aria-label="Đổi giao diện">☼</button>
+      </header>
+
+      <section id="overview" class="hero section-anchor">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> LỘ TRÌNH ÔN THI C1</div>
+          <h1>Tổng quan về<br><em>Hệ điều hành</em></h1>
+          <p class="hero-text">Một hệ điều hành không chỉ là phần mềm “chạy máy”. Hãy nhìn nó như <strong>người quản lý tài nguyên</strong> và <strong>cầu nối</strong> giữa người dùng, ứng dụng và phần cứng.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#learn">Bắt đầu học <span>→</span></a>
+            <a class="button button-quiet" href="#quiz">Kiểm tra ngay</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="core"><span>OS</span><small>HỆ ĐIỀU HÀNH</small></div>
+          <div class="float-card float-top"><span class="mini-icon coral">⚙</span><span>Quản lý<br><b>tài nguyên</b></span></div>
+          <div class="float-card float-bottom"><span class="mini-icon mint">⌘</span><span>Kết nối<br><b>ứng dụng ↔ máy</b></span></div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Tiến độ học tập">
+        <div class="stat-card"><span class="stat-icon purple">◈</span><div><strong>7</strong><span>cụm kiến thức</span></div></div>
+        <div class="stat-card"><span class="stat-icon orange">◇</span><div><strong id="cardCount">12</strong><span>thẻ cần ôn hôm nay</span></div></div>
+        <div class="stat-card"><span class="stat-icon green">✓</span><div><strong id="quizScore">—</strong><span>điểm quiz gần nhất</span></div></div>
+        <div class="progress-card"><div class="progress-label"><span>Tiến độ chương</span><strong id="progressValue">0%</strong></div><div class="progress-bar"><i id="progressBar"></i></div><small>Hoàn thành quiz và thẻ nhớ để tăng tiến độ</small></div>
+      </section>
+      <div class="scope-banner"><span class="scope-check">✓</span><div><strong>Phạm vi ôn tập đã lọc theo yêu cầu giảng viên</strong><p>Chỉ tập trung vào lý thuyết, khái niệm, vai trò, phân loại và mối liên hệ giữa các nội dung. Không có code, bài tập tính toán hay mô phỏng thuật toán.</p></div></div>
+
+      <section id="map" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">01 · NHÌN TOÀN CẢNH</div><h2>Bản đồ kiến thức</h2></div><p>Đi từ “vì sao cần HĐH?” đến “xây dựng HĐH thế nào?”. Mỗi phần là một mảnh ghép của cùng một hệ thống.</p></div>
+        <div class="map-grid">
+          <button class="map-node node-main" data-topic="concept"><span class="node-number">01</span><strong>Khái niệm</strong><small>HĐH nằm ở đâu?</small></button>
+          <button class="map-node" data-topic="history"><span class="node-number">02</span><strong>Lịch sử</strong><small>Vì sao nó phát triển?</small></button>
+          <button class="map-node" data-topic="definition"><span class="node-number">03</span><strong>Định nghĩa & phân loại</strong><small>Có những kiểu nào?</small></button>
+          <button class="map-node" data-topic="properties"><span class="node-number">04</span><strong>Tính chất</strong><small>Điều gì làm nên HĐH?</small></button>
+          <button class="map-node" data-topic="process"><span class="node-number">05</span><strong>Tiến trình & luồng</strong><small>Chương trình đang chạy</small></button>
+          <button class="map-node" data-topic="structure"><span class="node-number">06</span><strong>Cấu trúc HĐH</strong><small>HĐH được tổ chức ra sao?</small></button>
+          <button class="map-node" data-topic="design"><span class="node-number">07</span><strong>Xây dựng HĐH</strong><small>Những bài toán cốt lõi</small></button>
+        </div>
+        <div class="connection-hint">Mẹo liên kết: <b>nhu cầu phần cứng</b> → <b>chức năng HĐH</b> → <b>cấu trúc</b> → <b>các bài toán thiết kế</b>.</div>
+      </section>
+
+      <section id="learn" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">02 · HIỂU BẢN CHẤT</div><h2>Học theo cụm kiến thức</h2></div><p>Chọn một cụm, đọc phần cốt lõi rồi tự trả lời câu hỏi “vì sao?” trước khi xem đáp án.</p></div>
+        <div class="topic-layout">
+          <div class="topic-list" id="topicList"></div>
+          <article class="topic-detail" id="topicDetail"></article>
+        </div>
+      </section>
+
+      <section id="cards" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">03 · ACTIVE RECALL</div><h2>Thẻ nhớ thông minh</h2></div><p>Che đáp án, tự nói thành tiếng, sau đó đánh giá mức độ nhớ. Hệ thống sẽ lưu lại lựa chọn của bạn.</p></div>
+        <div class="flashcard-wrap">
+          <div class="flashcard" id="flashcard">
+            <div class="card-meta"><span id="cardTopic">KHÁI NIỆM</span><span id="cardIndex">01 / 12</span></div>
+            <div class="card-question" id="cardQuestion"></div>
+            <div class="card-answer" id="cardAnswer"></div>
+            <button class="reveal-button" id="revealCard">Hiện đáp án <span>↓</span></button>
+            <div class="rating-actions hidden" id="ratingActions">
+              <button class="rating hard" data-rating="hard">Khó nhớ</button>
+              <button class="rating okay" data-rating="okay">Nhớ được</button>
+              <button class="rating easy" data-rating="easy">Rất chắc</button>
+            </div>
+          </div>
+          <div class="card-side"><div class="side-label">NHỊP ÔN TẬP</div><h3>Nhớ ít nhưng nhớ lâu.</h3><p>Ôn lại thẻ “Khó nhớ” sau 1 ngày, “Nhớ được” sau 3 ngày và “Rất chắc” sau 7 ngày.</p><div class="review-plan"><span><i class="dot red"></i> Khó nhớ <b>1 ngày</b></span><span><i class="dot yellow"></i> Nhớ được <b>3 ngày</b></span><span><i class="dot green"></i> Rất chắc <b>7 ngày</b></span></div><button class="text-button" id="shuffleCards">↻ Xáo trộn thẻ</button></div>
+        </div>
+      </section>
+
+      <section id="quiz" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">04 · TỰ KIỂM TRA</div><h2>Quiz 5 phút</h2></div><p>Không tra tài liệu. Mục tiêu là phát hiện lỗ hổng để quay lại đúng phần cần học.</p></div>
+        <div class="quiz-panel" id="quizPanel">
+          <div class="quiz-progress"><span id="quizStep">CÂU 01 / 05</span><div><i id="quizProgressBar"></i></div></div>
+          <div id="quizContent"></div>
+        </div>
+      </section>
+
+      <footer><span>OS C1 · Học hiểu để nhớ lâu</span><span>Ghi chú học tập được lưu trên thiết bị của bạn</span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
