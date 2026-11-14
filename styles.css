@@ -42,20 +42,20 @@ body.dark .chapter-two .map-deadlock{background:#463c67;border-color:#a795dc}
 body.dark .chapter-two .map-arrow{color:#d7ebe8}
 
 /* High-contrast pass for the C2 map. */
-.chapter-two #map{background:#ffffff;border:3px solid #183247;border-radius:16px;padding:30px 28px 28px}
+.chapter-two #map{background:#f7fbf8;border:1px solid #dce7e5;border-radius:16px;padding:30px 28px 28px}
 .chapter-two #map .section-heading h2{color:#183247;font-size:34px}
 .chapter-two #map .section-heading>p{color:#183247;font-weight:600}
-.chapter-two .c2-map-card{background:#ffffff!important;border:3px solid #183247!important;border-top-width:10px!important;border-radius:10px;box-shadow:none;padding:16px 15px}
+.chapter-two .c2-map-card{background:#ffffff!important;border:1px solid #cbd9d7!important;border-top:6px solid #183247!important;border-radius:10px;box-shadow:0 4px 12px rgba(31,72,72,.06);padding:16px 15px}
 .chapter-two .c2-map-card strong{color:#183247!important;font-size:18px}
 .chapter-two .c2-map-card small{color:#183247!important;font-weight:600}
-.chapter-two .map-process{border-top-color:#159570!important}
-.chapter-two .map-thread{border-top-color:#1976b5!important}
-.chapter-two .map-cpu{border-top-color:#c28700!important}
-.chapter-two .map-critical{border-top-color:#c34d32!important}
-.chapter-two .map-deadlock{border-top-color:#6651a4!important}
+.chapter-two .map-process{border-top-color:#45b99b!important}
+.chapter-two .map-thread{border-top-color:#5d8fc5!important}
+.chapter-two .map-cpu{border-top-color:#d6a53c!important}
+.chapter-two .map-critical{border-top-color:#d9826d!important}
+.chapter-two .map-deadlock{border-top-color:#897bc5!important}
 .chapter-two .map-arrow{color:#183247;font-size:28px}
 .chapter-two .connection-hint{background:#183247;color:#ffffff;border-radius:8px;font-weight:500}
-body.dark .chapter-two #map{background:#ffffff;border-color:#183247}
+body.dark .chapter-two #map{background:#f7fbf8;border-color:#dce7e5}
 body.dark .chapter-two #map .section-heading h2,
 body.dark .chapter-two #map .section-heading>p,
 body.dark .chapter-two .c2-map-card strong,
