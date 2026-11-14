@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#183247">
+  <title>OS C2 · Quản lý tiến trình</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="chapter-two">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview"><span class="brand-mark">OS</span><span><strong>Học HĐH</strong><small>Chương 2 · C2</small></span></a>
+      <nav class="nav" aria-label="Điều hướng chương 2">
+        <a class="nav-link active" href="#overview"><span>⌂</span>Tổng quan</a>
+        <a class="nav-link" href="#map"><span>⌘</span>Mạch kiến thức</a>
+        <a class="nav-link" href="#learn"><span>◈</span>Học trọng tâm</a>
+        <a class="nav-link" href="#algorithms"><span>≋</span>Nhóm điều phối</a>
+        <a class="nav-link" href="#cards"><span>◇</span>Thẻ nhớ</a>
+        <a class="nav-link" href="#quiz"><span>✓</span>Kiểm tra</a>
+      </nav>
+      <div class="sidebar-note"><span class="spark">✦</span><strong>Học theo mối quan hệ</strong><p>Tiến trình cần CPU, CPU cần điều phối, điều phối cần đồng bộ và đồng bộ phải tránh bế tắc.</p></div>
+      <a class="source-link" href="index.html">↙ Về trang Chương 1</a>
+      <a class="source-link" href="Hệ Điều Hành-C2.pdf" target="_blank" rel="noreferrer">↗ Mở file C2 gốc</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div class="breadcrumb">HỆ ĐIỀU HÀNH <span>/</span> CHƯƠNG 2</div><button class="icon-button" id="themeToggle" title="Đổi giao diện" aria-label="Đổi giao diện">☼</button></header>
+
+      <section id="overview" class="hero section-anchor">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> LỘ TRÌNH ÔN THI C2</div>
+          <h1>Quản lý<br><em>tiến trình</em></h1>
+          <p class="hero-text">Một chương trình khi chạy trở thành <strong>tiến trình</strong>. Hệ điều hành phải theo dõi, điều phối, đồng bộ các tiến trình và xử lý xung đột tài nguyên mà không để hệ thống rơi vào bế tắc.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#learn">Bắt đầu học <span>→</span></a><a class="button button-quiet" href="#quiz">Kiểm tra ngay</a></div>
+        </div>
+        <div class="hero-visual process-visual">
+          <div class="process-line"></div>
+          <div class="process-stage stage-new"><span>NEW</span><small>Khởi tạo</small></div>
+          <div class="process-stage stage-ready"><span>READY</span><small>Sẵn sàng</small></div>
+          <div class="process-stage stage-run"><span>RUN</span><small>Thực hiện</small></div>
+          <div class="process-stage stage-wait"><span>WAIT</span><small>Chờ đợi</small></div>
+          <div class="process-stage stage-end"><span>END</span><small>Kết thúc</small></div>
+          <div class="process-caption">Vòng đời của một tiến trình</div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Tiến độ học tập">
+        <div class="stat-card"><span class="stat-icon purple">◈</span><div><strong>5</strong><span>cụm trọng tâm</span></div></div>
+        <div class="stat-card"><span class="stat-icon orange">◇</span><div><strong id="c2CardCount">20</strong><span>thẻ cần ôn hôm nay</span></div></div>
+        <div class="stat-card"><span class="stat-icon green">✓</span><div><strong id="c2QuizScore">—</strong><span>điểm quiz gần nhất</span></div></div>
+        <div class="progress-card"><div class="progress-label"><span>Tiến độ chương</span><strong id="c2ProgressValue">0%</strong></div><div class="progress-bar"><i id="c2ProgressBar"></i></div><small>Học cụm, ôn thẻ và tự kiểm tra để ghi nhớ lâu</small></div>
+      </section>
+      <div class="scope-banner"><span class="scope-check">✓</span><div><strong>Phạm vi C2 đã được lọc nghiêm ngặt</strong><p>Chỉ có lý thuyết và đặc điểm cần nhớ. Không có code, công thức tính, bài tập định lượng hoặc mô phỏng kết quả thuật toán.</p></div></div>
+
+      <section id="map" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">01 · MẠCH TƯ DUY</div><h2>Nhìn C2 như một hệ thống</h2></div><p>Đừng học 5 phần rời nhau. Hãy theo mạch: tiến trình cần được chạy → CPU cần được chọn → tài nguyên cần được bảo vệ → bế tắc cần được xử lý.</p></div>
+        <div class="c2-map">
+          <button class="c2-map-card map-process" data-topic="process"><span>01</span><strong>Tiến trình</strong><small>Đối tượng được quản lý</small></button>
+          <div class="map-arrow">→</div>
+          <button class="c2-map-card map-thread" data-topic="thread"><span>02</span><strong>Luồng</strong><small>Đơn vị thực thi</small></button>
+          <div class="map-arrow">→</div>
+          <button class="c2-map-card map-cpu" data-topic="cpu"><span>03</span><strong>Điều phối CPU</strong><small>Ai được chạy trước?</small></button>
+          <div class="map-arrow">→</div>
+          <button class="c2-map-card map-critical" data-topic="critical"><span>04</span><strong>Tài nguyên găng</strong><small>Ai được truy cập?</small></button>
+          <div class="map-arrow">→</div>
+          <button class="c2-map-card map-deadlock" data-topic="deadlock"><span>05</span><strong>Bế tắc</strong><small>Không ai tiến lên</small></button>
+        </div>
+        <div class="connection-hint">Câu chốt toàn chương: <b>điều phối</b> quyết định cơ hội chạy, <b>đồng bộ</b> bảo vệ tài nguyên, còn <b>xử lý bế tắc</b> bảo đảm hệ thống không bị kẹt vĩnh viễn.</div>
+      </section>
+
+      <section id="learn" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">02 · HỌC TRỌNG TÂM</div><h2>5 cụm kiến thức bắt buộc</h2></div><p>Mỗi cụm có phần “bản chất”, “phải phân biệt” và “câu chốt đi thi”. Học theo câu hỏi, không đọc lan man.</p></div>
+        <div class="topic-layout"><div class="topic-list" id="c2TopicList"></div><article class="topic-detail" id="c2TopicDetail"></article></div>
+      </section>
+
+      <section id="algorithms" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">03 · CHỈ HỌC NGUYÊN LÝ</div><h2>Nhóm thuật toán điều phối CPU</h2></div><p>Không tính thời gian. Chỉ cần nhận ra nguyên tắc chọn tiến trình, điểm mạnh, hạn chế và bối cảnh phù hợp.</p></div>
+        <div class="algorithm-grid" id="algorithmGrid"></div>
+        <div class="compare-box"><div class="compare-title"><span>NHỚ NHANH</span><strong>Chọn thuật toán bằng câu hỏi nào?</strong></div><div class="compare-row"><b>Muốn đơn giản, đến trước chạy trước?</b><span>FCFS</span></div><div class="compare-row"><b>Muốn ưu tiên việc ngắn?</b><span>SJF / SRTF</span></div><div class="compare-row"><b>Muốn chia lượt công bằng, tương tác tốt?</b><span>Round Robin</span></div><div class="compare-row"><b>Muốn ưu tiên theo mức quan trọng?</b><span>Priority Scheduling</span></div></div>
+      </section>
+
+      <section id="cards" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">04 · ACTIVE RECALL</div><h2>Thẻ nhớ C2</h2></div><p>Che đáp án, tự giải thích bằng lời của bạn. Các thẻ chỉ hỏi khái niệm và quan hệ lý thuyết, không hỏi code hay tính toán.</p></div>
+        <div class="flashcard-wrap"><div class="flashcard" id="c2Flashcard"><div class="card-meta"><span id="c2CardTopic">TIẾN TRÌNH</span><span id="c2CardIndex">01 / 20</span></div><div class="card-question" id="c2CardQuestion"></div><div class="card-answer" id="c2CardAnswer"></div><button class="reveal-button" id="c2RevealCard">Hiện đáp án <span>↓</span></button><div class="rating-actions hidden" id="c2RatingActions"><button class="rating hard">Khó nhớ</button><button class="rating okay">Nhớ được</button><button class="rating easy">Rất chắc</button></div></div><div class="card-side"><div class="side-label">CÁCH ÔN C2</div><h3>Nhớ theo cặp đối lập.</h3><p>Tiến trình / chương trình · sẵn sàng / chờ đợi · ưu tiên / công bằng · phòng ngừa / phòng tránh.</p><div class="review-plan"><span><i class="dot red"></i> Khó nhớ <b>1 ngày</b></span><span><i class="dot yellow"></i> Nhớ được <b>3 ngày</b></span><span><i class="dot green"></i> Rất chắc <b>7 ngày</b></span></div><button class="text-button" id="c2ShuffleCards">↻ Xáo trộn thẻ</button></div></div>
+      </section>
+
+      <section id="quiz" class="content-section section-anchor">
+        <div class="section-heading"><div><div class="eyebrow">05 · TỰ KIỂM TRA</div><h2>Quiz lý thuyết C2</h2></div><p>5 câu kiểm tra khả năng phân biệt và liên kết khái niệm. Không có câu tính toán thời gian chờ hay mô phỏng hàng đợi.</p></div>
+        <div class="quiz-panel" id="c2QuizPanel"><div class="quiz-progress"><span id="c2QuizStep">CÂU 01 / 10</span><div><i id="c2QuizProgressBar"></i></div></div><div id="c2QuizContent"></div></div>
+      </section>
+      <footer><span>OS C2 · Quản lý tiến trình</span><span>Nội dung được giới hạn theo phạm vi ôn tập của bạn</span></footer>
+    </main>
+  </div>
+  <script src="c2.js"></script>
+</body>
+</html>
